@@ -1,0 +1,44 @@
+package com.tvs;
+
+public class LinkedListSample {
+	Node head;
+	
+	
+	public static void main(String[] args) {
+		LinkedListSample list = new LinkedListSample();
+		
+		list.head = new Node(10);
+		Node second = new Node(20);
+		Node third = new Node(30);
+		Node fourth = new Node(40);
+		
+		list.head.node = second;
+		
+		second.node = third;
+		
+		third.node = fourth;
+		
+		list.printList();
+
+	}
+	
+    public void printList() 
+    { 
+        Node n = head; 
+        while (n != null) { 
+            System.out.print(n.value + " "); 
+            n = n.node; 
+        } 
+    } 
+}
+class Node{
+	int value;
+	Node node;
+	
+	Node(int value){
+		this.value = value;
+		this.node = null;
+	}
+}
+
+
